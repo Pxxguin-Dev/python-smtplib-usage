@@ -16,7 +16,7 @@ jobs:
       SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
       SENDER_SERVER: ${{ secrets.SENDER_SERVER }}
       SENDER_PORT: ${{ secrets.SENDER_PORT }}
-      RECEIVER_EMAILS: ${{ secrets.RECEIVER_EMAILS }}
+      RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
     steps:
       - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990

@@ -15,7 +15,7 @@ class EmailSender(BaseSettings):
     sender_password: SecretStr
     sender_server: str
     sender_port: int
-    receiver_emails: List[EmailStr]
+    receiver_email: EmailStr
 
     # Github workflows env
     run_id: str = Field(alias='RUN_ID')
@@ -64,5 +64,4 @@ Github workflows를 담당하고 있는 🤖pxxguin입니다.
             print("fuck")
 
     def _sending_email(self):
-        for email in self.receiver_emails:
-            self._setting_sending_email(to_email=email)
+        self._setting_sending_email(to_email=self.receiver_email)
