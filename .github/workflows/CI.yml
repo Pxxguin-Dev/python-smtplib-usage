@@ -9,4 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - run: |
-          echo {{github.actor}}
+          echo "${{github.actor}}"
+          echo "${{github.event_name}}"
+          echo "${{github.ref_name}}
