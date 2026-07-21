@@ -16,3 +16,5 @@ jobs:
           echo "${{job.status}}"
           echo "${{github.actor}}"
           echo "${{github.triggering_actor}}"
+          echo "${{github.sha}}"
+          echo "${{github.server_url}}/${{github.repository}}/actions/runs/${{github.run_id}}"
