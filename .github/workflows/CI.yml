@@ -12,3 +12,5 @@ jobs:
           echo "${{github.actor}}"
           echo "${{github.event_name}}"
           echo "${{github.ref_name}}"
+          echo "${{github.run_id}}"
+          echo "${{job.status}}"
