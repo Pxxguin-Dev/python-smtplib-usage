@@ -14,3 +14,5 @@ jobs:
           echo "${{github.ref_name}}"
           echo "${{github.run_id}}"
           echo "${{job.status}}"
+          echo "${{github.actor}}"
+          echo "${{github.triggering_actor}}"
