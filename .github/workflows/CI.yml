@@ -1,22 +1,15 @@
-name: CI.yml
+name: CI workflow
 on:
   push:
-    branches:
-      - main
+    branches: ['main']
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - run: |
-          echo "${{github.actor}}"
-          echo "${{github.event_name}}"
-          echo "${{github.ref_name}}"
-          echo "${{github.run_id}}"
-          echo "${{job.status}}"
-          echo "${{github.actor}}"
-          echo "${{github.triggering_actor}}"
-          echo "${{github.sha}}"
-          echo "${{github.server_url}}/${{github.repository}}/actions/runs/${{github.run_id}}"
-          echo "${{github.event.head_commit.message}}"
-          echo "{{STATUS_ICON}}"
+      - uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990
+        with:
+          version-file: 'pyproject.toml'
+          python-version: '3.11.15'
+      - name: Install packages
+        run: uv sync
