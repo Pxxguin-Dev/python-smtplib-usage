@@ -1,0 +1,8 @@
+[project]
+name = "python-smtplib-useage"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "email-validator>=2.3.0",
+    "pydantic-settings>=2.14.2",
+]
