@@ -58,10 +58,11 @@ Github workflows를 담당하고 있는 🤖pxxguin입니다.
 
         try:
             with SMTP(self.sender_server, self.sender_port) as server:
+                server.starttls()
                 server.login(self.sender_email, self.sender_password.get_secret_value())
                 server.send_message(message)
         except Exception as e:
-            print("fuck")
+            raise e
 
     def _sending_email(self):
         self._setting_sending_email(to_email=self.receiver_email)
