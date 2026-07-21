@@ -9,7 +9,6 @@ jobs:
       - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990
         with:
-          version-file: 'pyproject.toml'
           python-version: '3.11.15'
       - name: Install packages
         run: uv sync
