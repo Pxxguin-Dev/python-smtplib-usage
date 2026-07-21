@@ -17,6 +17,7 @@ jobs:
       SENDER_SERVER: ${{ secrets.SENDER_SERVER }}
       SENDER_PORT: ${{ secrets.SENDER_PORT }}
       RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
+      SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK_URL}}
     steps:
       - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990
