@@ -19,3 +19,4 @@ jobs:
           echo "${{github.sha}}"
           echo "${{github.server_url}}/${{github.repository}}/actions/runs/${{github.run_id}}"
           echo "${{github.event.head_commit.message}}"
+          echo "{{STATUS_ICON}}"
