@@ -2,9 +2,18 @@ name: CI workflow
 on:
   push:
     branches: ['main']
+    paths:
+      - "src/**/*.py"
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      RUN_ID:${{github.run_id}}
+      ACTOR:${{github.actor}}
+      WORKFLOW_URL:"${{github.server_url}}/${{github.repository}}/actions/runs/${{github.run_id}}"
+      CURRENT_STATUS:${{github.action_status}}
+      COMMIT_MESSAGE:${{github.event.head_commit.message}}
+      GITHUB_SHA:${{github.sha}}
     steps:
       - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990
@@ -12,3 +21,5 @@ jobs:
           python-version: '3.11.15'
       - name: Install packages
         run: uv sync
+      - name: Run main files
+        run: uv run src.main.py
