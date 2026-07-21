@@ -3,7 +3,7 @@ from pathlib import Path
 from pydantic import Field, SecretStr
 from pydantic_settings import SettingsConfigDict, BaseSettings
 
-from src.features.email_logic import EmailSender
+from features.email_logic import EmailSender
 
 class SlackSender(BaseSettings):
     slack_webhook_url: SecretStr = Field(alias='SLACK_WEBHOOK_URL')
