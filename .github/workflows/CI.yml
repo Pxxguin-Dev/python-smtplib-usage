@@ -20,4 +20,4 @@ jobs:
       - name: Install packages
         run: uv sync
       - name: Run main files
-        run: uv run src.main.py
+        run: uv run src/main.py
