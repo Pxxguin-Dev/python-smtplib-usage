@@ -58,7 +58,7 @@ Github workflows를 담당하고 있는 🤖pxxguin입니다.
 
         try:
             with SMTP(self.sender_server, self.sender_port) as server:
-                server.login(self.sender_email, self.sender_password)
+                server.login(self.sender_email, self.sender_password.get_secret_value())
                 server.send_message(message)
         except Exception as e:
             print("fuck")
