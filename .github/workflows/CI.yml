@@ -2,8 +2,6 @@ name: CI workflow
 on:
   push:
     branches: ['main']
-    paths:
-      - "src/**/*.py"
 jobs:
   build:
     runs-on: ubuntu-latest
